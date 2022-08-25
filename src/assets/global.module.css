@@ -1,0 +1,11 @@
+.flex_space_between{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex_space_around{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}

@@ -1,0 +1,30 @@
+{
+  "coord": { "lon": -117.0167, "lat": 32.5333 },
+  "weather": [
+    { "id": 801, "main": "Clouds", "description": "few clouds", "icon": "02d" }
+  ],
+  "base": "stations",
+  "main": {
+    "temp": 24.89,
+    "feels_like": 25.26,
+    "temp_min": 21.51,
+    "temp_max": 31.27,
+    "pressure": 1011,
+    "humidity": 70
+  },
+  "visibility": 10000,
+  "wind": { "speed": 5.14, "deg": 220 },
+  "clouds": { "all": 20 },
+  "dt": 1661386717,
+  "sys": {
+    "type": 1,
+    "id": 7164,
+    "country": "MX",
+    "sunrise": 1661347082,
+    "sunset": 1661394190
+  },
+  "timezone": -25200,
+  "id": 3981609,
+  "name": "Tijuana",
+  "cod": 200
+}
