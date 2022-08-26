@@ -9,11 +9,21 @@
             <th></th>
             <th></th>
           </tr>
-          <tr v-for=" item in this.apiResult.list " :key="item.dt">
-            <td><img :src="'src/assets/images/weathers/' + this.stamp + '_' + item.weather[0].main + '.png'" /></td>
-            <td>{{item.dt_txt}}</td>
-            <td>{{item.main.temp}}°</td>
-            <td>{{item.weather[0].description.toUpperCase()}}</td>
+          <tr v-for="item in this.apiResult.list" :key="item.dt">
+            <td>
+              <img
+                :src="
+                  'src/assets/images/weathers/' +
+                  this.stamp +
+                  '_' +
+                  item.weather[0].main +
+                  '.png'
+                "
+              />
+            </td>
+            <td>{{ item.dt_txt }}</td>
+            <td>{{ item.main.temp }}°</td>
+            <td>{{ item.weather[0].description.toUpperCase() }}</td>
           </tr>
         </table>
       </div>
@@ -21,6 +31,8 @@
   </main>
 </template>
 <script>
+import { getStamp } from "../classes/Stamp.js";
+
 export default {
   props: ["propApiResult"],
 
@@ -29,22 +41,14 @@ export default {
       apiResult: this.propApiResult,
       weatherCondition: "",
       stamp: "",
-      weather: ""
+      weather: "",
     };
   },
 
   created() {
     let weatherCondition = this.apiResult.list[0].weather[0].description;
-
     this.weatherCondition = weatherCondition.toUpperCase();
-    //reutilizar este bloque
-    let hour = new Date().getHours();
-    if (hour > 17) {
-      this.stamp = "night";
-    } else {
-      this.stamp = "day";
-    }
-    //reutilizar este bloque
+    this.stamp = getStamp();
     this.weather = this.stamp + "_" + weatherCondition.replace(/\s+/g, "_");
   },
 };

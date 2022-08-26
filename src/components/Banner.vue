@@ -16,6 +16,8 @@
   </div>
 </template>
 <script>
+import { getStamp } from "../classes/Stamp.js";
+
 export default {
   props: ["propApiResult"],
 
@@ -34,25 +36,13 @@ export default {
   },
 
   created() {
-
     let weatherCondition = this.apiResult.list[0].weather[0].description;
     this.data.country = this.apiResult.city.country;
     this.data.temp = this.apiResult.list[0].main.temp;
-    
-    let apiDate = this.apiResult.list[0].dt_txt;
-    this.date = new Date(apiDate).toUTCString().substr(0,11);
-    /*let weatherCondition = "clear sky";
-    this.data.country = "MX";
-    this.data.temp = "27.03";*/
 
-    //reutilizar este bloque
-    let hour = new Date().getHours();
-    if (hour > 17) {
-      this.data.stamp = "night";
-    } else {
-      this.data.stamp = "day";
-    }
-    //reutilizar este bloque
+    let apiDate = this.apiResult.list[0].dt_txt;
+    this.date = new Date(apiDate).toUTCString().substr(0, 11);
+    this.data.stamp = getStamp();
     this.data.weatherCondition = weatherCondition.toUpperCase();
 
     this.weather =
