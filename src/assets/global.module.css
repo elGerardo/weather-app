@@ -1,3 +1,8 @@
+.container{
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
 .flex_space_between{
     display: flex;
     justify-content: space-between;
@@ -7,5 +12,11 @@
 .flex_space_around{
     display: flex;
     justify-content: space-around;
+    align-items: center;
+}
+
+.flex_center{
+    display: flex;
+    justify-content: center;
     align-items: center;
 }

@@ -2,10 +2,10 @@
   <div :class="[$style.content, $style.flex_space_around, this.weather]">
     <div :class="[$style.flex_space_between]">
       <div>
-        <h2>{{ data.temp }}</h2>
+        <h2>{{ data.temp }}°</h2>
       </div>
       <div>
-        <p>Tuesday, 22 september</p>
+        <p>{{ date }}</p>
         <p>{{ data.location }}, {{ data.country }}</p>
       </div>
     </div>
@@ -17,59 +17,46 @@
 </template>
 <script>
 export default {
+  props: ["propApiResult"],
+
   data() {
     return {
-      apiKey: "1f5fcbe856a9fe8fb9b0dc7ca8b0c232",
-      units: "metric",
-      baseUrl: "http://api.openweathermap.org/data/2.5/weather?",
-      // Complete Url http://api.openweathermap.org/data/2.5/weather?q=Tijuana&units=metric&APPID=3350bfc696c299a2821c0453680eb1c5
-      weather: "",
+      apiResult: this.propApiResult,
       data: {
         location: "Tijuana",
         weatherCondition: "",
         country: "",
         temp: "",
         stamp: "",
+        date: "",
       },
     };
   },
 
-  async created() {
-    try {
-      /*let response = await fetch(
-        this.baseUrl +
-          "q=" +
-          this.data.location +
-          "&units=" +
-          this.units +
-          "&APPID=" +
-          this.apiKey
-      );
-      let body = await response.json();
+  created() {
 
-      let weatherCondition = body.weather[0].description;
-      this.data.country = body.sys.country;
-      this.data.temp = body.main.temp;
+    let weatherCondition = this.apiResult.list[0].weather[0].description;
+    this.data.country = this.apiResult.city.country;
+    this.data.temp = this.apiResult.list[0].main.temp;
+    
+    let apiDate = this.apiResult.list[0].dt_txt;
+    this.date = new Date(apiDate).toUTCString().substr(0,11);
+    /*let weatherCondition = "clear sky";
+    this.data.country = "MX";
+    this.data.temp = "27.03";*/
 
-      console.log(body);*/
-      let weatherCondition = "clear sky";
-      this.data.country = "MX";
-      this.data.temp = "27.03";
-
-
-      let hour = new Date().getHours();
-      if (hour > 16) {
-        this.data.stamp = "night";
-      } else {
-        this.data.stamp = "day";
-      }
-      this.data.weatherCondition = weatherCondition.toUpperCase();
-
-      this.weather =
-        this.data.stamp + "_" + weatherCondition.replace(/\s+/g, "_");
-    } catch (e) {
-      console.log(e);
+    //reutilizar este bloque
+    let hour = new Date().getHours();
+    if (hour > 17) {
+      this.data.stamp = "night";
+    } else {
+      this.data.stamp = "day";
     }
+    //reutilizar este bloque
+    this.data.weatherCondition = weatherCondition.toUpperCase();
+
+    this.weather =
+      this.data.stamp + "_" + weatherCondition.replace(/\s+/g, "_");
   },
 };
 </script>
