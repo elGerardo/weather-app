@@ -9,7 +9,6 @@ export default {
       apiKey: "1f5fcbe856a9fe8fb9b0dc7ca8b0c232",
       units: "metric",
       baseUrl: "http://api.openweathermap.org/data/2.5/forecast?",
-      // Complete Url http://api.openweathermap.org/data/2.5/weather?q=Tijuana&units=metric&APPID={API_KEY}
       weather: "",
       thinking: true,
       coordinates: {},
@@ -48,8 +47,6 @@ export default {
     async initApi(){
       let response = await fetch(
         this.baseUrl +
-          /*"q=" +
-          this.location +*/
           "lat=" +
           this.coordinates.latitute +
           "&lon=" +
