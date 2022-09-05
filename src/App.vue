@@ -13,6 +13,7 @@ export default {
       thinking: true,
       coordinates: {},
       apiResult: {},
+      success: false,
     };
   },
 
@@ -26,12 +27,14 @@ export default {
     getLocation(){
 
       let successCallback = location => {
-
+        this.success = true;
+        
         this.coordinates = {
           accuracy:  location.coords.accuracy,
           latitute:  location.coords.latitude,
           longitude:  location.coords.longitude,
         }
+
 
         this.initApi();
       };
@@ -61,7 +64,7 @@ export default {
       this.apiResult = body;
       setTimeout( () => {
         this.loading = false;
-      }, 3000)
+      }, 2000)
     }
 
   },
@@ -77,7 +80,8 @@ export default {
   <main>
     <div v-if="loading" :class="[$style.content]">
       <img src="./assets/images/loading_gif.gif"/>
-      <h2 v-if="thinking">We need your location to show the weather</h2>
+      <h2 v-if="thinking && !success">We need your location to show the weather</h2>
+      <h2 v-if="thinking && success">Loading...</h2>
       <h2 v-if="!thinking">We're sorry you don't trust us :c</h2>
       <div>
         <p>Assets:</p>
