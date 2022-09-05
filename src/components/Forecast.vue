@@ -47,9 +47,11 @@ export default {
 
   created() {
     let weatherCondition = this.apiResult.list[0].weather[0].description;
+    
     this.weatherCondition = weatherCondition.toUpperCase();
     this.stamp = getStamp();
     this.weather = this.stamp + "_" + weatherCondition.replace(/\s+/g, "_");
+    console.log(this.weather)
   },
 };
 </script>

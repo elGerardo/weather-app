@@ -4,10 +4,14 @@
 .day_few_clouds,
 .day_clouds,
 .day_clear_sky,
+.day_scattered_clouds,
+.day_overcast_clouds,
 .night_clear,
 .night_few_clouds,
 .night_clouds,
-.night_clear_sky
+.night_clear_sky,
+.night_scattered_clouds,
+.night_overcast_clouds
 {
     color: white;
 }
@@ -41,6 +45,17 @@
     background: linear-gradient(90deg, rgba(167,167,167,1) 0%, rgba(223,237,240,1) 100%); 
 }
 
+.day_scattered_clouds{
+    background: rgb(26,145,255);
+    background: linear-gradient(90deg, rgba(26,145,255,1) 0%, rgba(168,168,168,1) 100%); 
+}
+
+.day_overcast_clouds{
+    background: rgb(167,167,167);
+    background: linear-gradient(90deg, rgba(167,167,167,1) 0%, rgba(223,237,240,1) 100%); 
+}
+
+
 /* nigth */
 
 .night_clear{
@@ -60,4 +75,15 @@
 
 .night_clouds{
     background: rgb(97,97,97);
-    background: linear-gradient(90deg, rgba(97,97,97,1) 0%, rgba(172,175,177,1) 100%); }
+    background: linear-gradient(90deg, rgba(97,97,97,1) 0%, rgba(172,175,177,1) 100%); 
+}
+
+.night_scattered_clouds{
+    background: rgb(19,52,83);
+    background: linear-gradient(90deg, rgba(19,52,83,1) 0%, rgba(167,167,167,1) 100%); 
+}
+
+.night_overcast_clouds{
+    background: rgb(97,97,97);
+    background: linear-gradient(90deg, rgba(97,97,97,1) 0%, rgba(172,175,177,1) 100%); 
+}
