@@ -78,8 +78,6 @@ export default {
       this.forecastApiResult = await responseForecast.json();
 
       this.weatherApiResult = await responseWeather.json();
-      console.log(this.weatherApiResult)
-      //      this.apiResult = body;
       setTimeout(() => {
         this.loading = false;
       }, 2000);

@@ -23,12 +23,9 @@ export default {
     this.data.country = this.apiResult.sys.country;
     this.data.temp = this.apiResult.main.temp;
 
-    //let apiDate = this.apiResult.list[0].dt_txt;
-    //this.date = new Date(apiDate).toUTCString().substr(0, 11);
-    //this.data.stamp = getStamp();
     let objectDate = new Date().toJSON().slice(0, 10);
     let objectTime = new Date().toJSON().slice(11, 19);
-    let apiDate = objectDate + ' ' +objectTime
+    let apiDate = objectDate + " " + objectTime;
     this.date = new Date(apiDate).toUTCString().substr(0, 11);
     this.data.stamp = getStamp();
     this.data.weatherCondition = weatherCondition.toUpperCase();
