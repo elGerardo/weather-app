@@ -36,11 +36,17 @@ export default {
   },
 
   created() {
-    let weatherCondition = this.apiResult.list[0].weather[0].description;
-    this.data.country = this.apiResult.city.country;
-    this.data.temp = this.apiResult.list[0].main.temp;
+    let weatherCondition = this.apiResult.weather[0].description;
+    this.data.country = this.apiResult.sys.country;
+    this.data.temp = this.apiResult.main.temp;
 
-    let apiDate = this.apiResult.list[0].dt_txt;
+    //let apiDate = this.apiResult.list[0].dt_txt;
+    //this.date = new Date(apiDate).toUTCString().substr(0, 11);
+    //this.data.stamp = getStamp();
+    let objectDate = new Date().toJSON().slice(0, 10);
+    let objectTime = new Date().toJSON().slice(11, 19);
+    let apiDate = objectDate + ' ' +objectTime
+    console.log(apiDate);
     this.date = new Date(apiDate).toUTCString().substr(0, 11);
     this.data.stamp = getStamp();
     this.data.weatherCondition = weatherCondition.toUpperCase();
