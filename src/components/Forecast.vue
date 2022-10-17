@@ -12,9 +12,7 @@
           <tr v-for="item in this.apiResult.list" :key="item.dt">
             <td>
               <img
-                :src="
-                  srcImage
-                "
+                :src=srcImage                
               />
             </td>
             <td>{{ item.dt_txt }}</td>
