@@ -11,7 +11,7 @@
     </div>
     <div :class="[$style.flex_space_between]">
       <p>{{ data.weatherCondition }}</p>
-      <img :src=srcImage />
+      <img :src="'src/assets/images/weathers/' + this.weather + '.png'" />
     </div>
   </div>
 </template>
@@ -32,7 +32,6 @@ export default {
         stamp: "",
         date: "",
       },
-      srcImage: null
     };
   },
 
@@ -47,27 +46,12 @@ export default {
     let objectDate = new Date().toJSON().slice(0, 10);
     let objectTime = new Date().toJSON().slice(11, 19);
     let apiDate = objectDate + ' ' +objectTime
-    console.log(apiDate);
     this.date = new Date(apiDate).toUTCString().substr(0, 11);
     this.data.stamp = getStamp();
     this.data.weatherCondition = weatherCondition.toUpperCase();
 
     this.weather =
       this.data.stamp + "_" + weatherCondition.replace(/\s+/g, "_");
-
-      if( this.weather == "day-broken-clouds" ) this.srcImage = "https://i.ibb.co/59SyMwz/day-broken-clouds.png";
-      if( this.weather == "day-clear" ) this.srcImage = "https://i.ibb.co/bbMGqQ9/day-clear.png";
-      if( this.weather == "day-clouds" ) this.srcImage = "https://i.ibb.co/m83Vq4Z/day-clouds.png";
-      if( this.weather == "day-few-clouds" ) this.srcImage = "https://i.ibb.co/2tyn9CL/day-few-clouds.png";
-      if( this.weather == "day-clouds" ) this.srcImage = "https://i.ibb.co/m83Vq4Z/day-clouds.png";
-      if( this.weather == "day-broken-clouds" ) this.srcImage = "https://i.ibb.co/59SyMwz/day-broken-clouds.png";
-      if( this.weather == "night-broken-clouds" ) this.srcImage = "https://i.ibb.co/7rshqj1/night-broken-clouds.png";
-      if( this.weather == "night-clear" ) this.srcImage = "https://i.ibb.co/k14LgBx/night-clear.png";
-      if( this.weather == "day-clouds" ) this.srcImage = "https://i.ibb.co/m83Vq4Z/day-clouds.png";
-      if( this.weather == "night-few-clouds" ) this.srcImage = "https://i.ibb.co/PF7zw3R/night-few-clouds.png";
-      if( this.weather == "day-clouds" ) this.srcImage = "https://i.ibb.co/m83Vq4Z/day-clouds.png";
-      if( this.weather == "night-broken-clouds" ) this.srcImage = "https://i.ibb.co/7rshqj1/night-broken-clouds.png";
-      if( this.weather == "non-drizzle" ) this.srcImage = "https://i.ibb.co/BTcMggL/non-drizzle.png";
   },
 };
 </script>

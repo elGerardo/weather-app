@@ -12,7 +12,13 @@
           <tr v-for="item in this.apiResult.list" :key="item.dt">
             <td>
               <img
-                :src=srcImage                
+                :src="
+                  'src/assets/images/weathers/' +
+                  hourToState(item.dt_txt) +
+                  '_' +
+                  item.weather[0].main +
+                  '.png'
+                "
               />
             </td>
             <td>{{ item.dt_txt }}</td>
@@ -36,7 +42,6 @@ export default {
       weatherCondition: "",
       stamp: "",
       weather: "",
-      srcImage: null
     };
   },
 
@@ -44,21 +49,19 @@ export default {
     let weatherCondition = this.apiResult.list[0].weather[0].description;
     this.weatherCondition = weatherCondition.toUpperCase();
     this.stamp = getStamp();
+    console.log(this.stamp);
     this.weather = this.stamp + "_" + weatherCondition.replace(/\s+/g, "_");
+  },
 
-    if( this.weather == "day-broken-clouds" ) this.srcImage = "https://i.ibb.co/59SyMwz/day-broken-clouds.png";
-      if( this.weather == "day-clear" ) this.srcImage = "https://i.ibb.co/bbMGqQ9/day-clear.png";
-      if( this.weather == "day-clouds" ) this.srcImage = "https://i.ibb.co/m83Vq4Z/day-clouds.png";
-      if( this.weather == "day-few-clouds" ) this.srcImage = "https://i.ibb.co/2tyn9CL/day-few-clouds.png";
-      if( this.weather == "day-clouds" ) this.srcImage = "https://i.ibb.co/m83Vq4Z/day-clouds.png";
-      if( this.weather == "day-broken-clouds" ) this.srcImage = "https://i.ibb.co/59SyMwz/day-broken-clouds.png";
-      if( this.weather == "night-broken-clouds" ) this.srcImage = "https://i.ibb.co/7rshqj1/night-broken-clouds.png";
-      if( this.weather == "night-clear" ) this.srcImage = "https://i.ibb.co/k14LgBx/night-clear.png";
-      if( this.weather == "day-clouds" ) this.srcImage = "https://i.ibb.co/m83Vq4Z/day-clouds.png";
-      if( this.weather == "night-few-clouds" ) this.srcImage = "https://i.ibb.co/PF7zw3R/night-few-clouds.png";
-      if( this.weather == "day-clouds" ) this.srcImage = "https://i.ibb.co/m83Vq4Z/day-clouds.png";
-      if( this.weather == "night-broken-clouds" ) this.srcImage = "https://i.ibb.co/7rshqj1/night-broken-clouds.png";
-      if( this.weather == "non-drizzle" ) this.srcImage = "https://i.ibb.co/BTcMggL/non-drizzle.png";
+  methods: {
+    hourToState(time) {
+      let data = time.slice(11, 13);
+      if (data > 17 || data < 5) {
+        return "night";
+      } else {
+        return "day";
+      }
+    },
   },
 };
 </script>
