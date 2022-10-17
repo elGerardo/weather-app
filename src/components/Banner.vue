@@ -11,7 +11,7 @@
     </div>
     <div :class="[$style.flex_space_between]">
       <p>{{ data.weatherCondition }}</p>
-      <img :src="'src/assets/images/weathers/' + this.weather + '.png'" />
+      <img :src="'../assets/images/weathers/' + this.weather + '.png'" />
     </div>
   </div>
 </template>

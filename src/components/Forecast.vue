@@ -13,7 +13,7 @@
             <td>
               <img
                 :src="
-                  'src/assets/images/weathers/' +
+                  '../assets/images/weathers/' +
                   this.stamp +
                   '_' +
                   item.weather[0].main +
