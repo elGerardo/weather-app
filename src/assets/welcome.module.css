@@ -1,0 +1,25 @@
+.content{
+    width: 100vw;
+    height: 100vh;
+    background-color: #6b51e8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.content img{
+    width: 20rem;
+}
+
+.content div{
+    font-size: 1.2rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: left;
+    color: rgb(255, 255, 255,0.5);
+}
