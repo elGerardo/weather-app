@@ -13,7 +13,7 @@
             <td>
               <img
                 :src="
-                  '../assets/images/weathers/' +
+                  'https://friendly-hamster-27a284.netlify.app/src/assets/images/weathers/' +
                   this.stamp +
                   '_' +
                   item.weather[0].main +
