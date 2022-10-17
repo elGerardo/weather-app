@@ -11,7 +11,7 @@
     </div>
     <div :class="[$style.flex_space_between]">
       <p>{{ data.weatherCondition }}</p>
-      <img :src="'images/weathers/' + this.weather + '.png'" />
+      <img :src="'https://friendly-hamster-27a284.netlify.app/public/images/weathers/' + this.weather + '.png'" />
     </div>
   </div>
 </template>
