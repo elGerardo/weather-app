@@ -1,20 +1,3 @@
-<template>
-  <div :class="[$style.content, $style.flex_space_around, this.weather]">
-    <div :class="[$style.flex_space_between]">
-      <div>
-        <h2>{{ data.temp }}°</h2>
-      </div>
-      <div>
-        <p>{{ date }}</p>
-        <p>{{ data.location }}, {{ data.country }}</p>
-      </div>
-    </div>
-    <div :class="[$style.flex_space_between]">
-      <p>{{ data.weatherCondition }}</p>
-      <img :src="'src/assets/images/weathers/' + this.weather + '.png'" />
-    </div>
-  </div>
-</template>
 <script>
 import { getStamp } from "../classes/Stamp.js";
 
@@ -62,3 +45,20 @@ export default {
 <style>
 @import "../assets/weathers.css";
 </style>
+<template>
+  <div :class="[$style.content, $style.flex_space_around, this.weather]">
+    <div :class="[$style.flex_space_between]">
+      <div>
+        <h2>{{ data.temp }}°</h2>
+      </div>
+      <div>
+        <p>{{ date }}</p>
+        <p>{{ data.location }}, {{ data.country }}</p>
+      </div>
+    </div>
+    <div :class="[$style.flex_space_between]">
+      <p>{{ data.weatherCondition }}</p>
+      <img :src="'public/images/weathers/' + this.weather + '.png'" />
+    </div>
+  </div>
+</template>

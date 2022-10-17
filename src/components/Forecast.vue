@@ -1,35 +1,3 @@
-<template :class>
-  <main :class="[this.weather]">
-    <div :class="[$style.container]">
-      <div :class="[$style.flex_center, $style.content]">
-        <table cellspacing="0" cellpadding="0">
-          <tr>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-          </tr>
-          <tr v-for="item in this.apiResult.list" :key="item.dt">
-            <td>
-              <img
-                :src="
-                  'src/assets/images/weathers/' +
-                  hourToState(item.dt_txt) +
-                  '_' +
-                  item.weather[0].main +
-                  '.png'
-                "
-              />
-            </td>
-            <td>{{ item.dt_txt }}</td>
-            <td>{{ item.main.temp }}°</td>
-            <td>{{ item.weather[0].description.toUpperCase() }}</td>
-          </tr>
-        </table>
-      </div>
-    </div>
-  </main>
-</template>
 <script>
 import { getStamp } from "../classes/Stamp.js";
 
@@ -73,3 +41,35 @@ export default {
 <style>
 @import "../assets/weathers.css";
 </style>
+<template :class>
+  <main :class="[this.weather]">
+    <div :class="[$style.container]">
+      <div :class="[$style.flex_center, $style.content]">
+        <table cellspacing="0" cellpadding="0">
+          <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+          <tr v-for="item in this.apiResult.list" :key="item.dt">
+            <td>
+              <img
+                :src="
+                  'public/images/weathers/' +
+                  hourToState(item.dt_txt) +
+                  '_' +
+                  item.weather[0].main +
+                  '.png'
+                "
+              />
+            </td>
+            <td>{{ item.dt_txt }}</td>
+            <td>{{ item.main.temp }}°</td>
+            <td>{{ item.weather[0].description.toUpperCase() }}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </main>
+</template>
