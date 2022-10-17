@@ -13,7 +13,7 @@
             <td>
               <img
                 :src="
-                  '~/assets/images/weathers/'+this.stamp+'_' +item.weather[0].main+'.png'
+                  srcImage
                 "
               />
             </td>
@@ -38,6 +38,7 @@ export default {
       weatherCondition: "",
       stamp: "",
       weather: "",
+      srcImage: null
     };
   },
 
@@ -46,7 +47,20 @@ export default {
     this.weatherCondition = weatherCondition.toUpperCase();
     this.stamp = getStamp();
     this.weather = this.stamp + "_" + weatherCondition.replace(/\s+/g, "_");
-    console.log(this.weather)
+
+    if( this.weather == "day-broken-clouds" ) this.srcImage = "https://i.ibb.co/59SyMwz/day-broken-clouds.png";
+      if( this.weather == "day-clear" ) this.srcImage = "https://i.ibb.co/bbMGqQ9/day-clear.png";
+      if( this.weather == "day-clouds" ) this.srcImage = "https://i.ibb.co/m83Vq4Z/day-clouds.png";
+      if( this.weather == "day-few-clouds" ) this.srcImage = "https://i.ibb.co/2tyn9CL/day-few-clouds.png";
+      if( this.weather == "day-clouds" ) this.srcImage = "https://i.ibb.co/m83Vq4Z/day-clouds.png";
+      if( this.weather == "day-broken-clouds" ) this.srcImage = "https://i.ibb.co/59SyMwz/day-broken-clouds.png";
+      if( this.weather == "night-broken-clouds" ) this.srcImage = "https://i.ibb.co/7rshqj1/night-broken-clouds.png";
+      if( this.weather == "night-clear" ) this.srcImage = "https://i.ibb.co/k14LgBx/night-clear.png";
+      if( this.weather == "day-clouds" ) this.srcImage = "https://i.ibb.co/m83Vq4Z/day-clouds.png";
+      if( this.weather == "night-few-clouds" ) this.srcImage = "https://i.ibb.co/PF7zw3R/night-few-clouds.png";
+      if( this.weather == "day-clouds" ) this.srcImage = "https://i.ibb.co/m83Vq4Z/day-clouds.png";
+      if( this.weather == "night-broken-clouds" ) this.srcImage = "https://i.ibb.co/7rshqj1/night-broken-clouds.png";
+      if( this.weather == "non-drizzle" ) this.srcImage = "https://i.ibb.co/BTcMggL/non-drizzle.png";
   },
 };
 </script>
