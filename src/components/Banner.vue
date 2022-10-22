@@ -1,20 +1,3 @@
-<template>
-  <div :class="[$style.content, $style.flex_space_around, this.weather]">
-    <div :class="[$style.flex_space_between]">
-      <div>
-        <h2>{{ data.temp }}°</h2>
-      </div>
-      <div>
-        <p>{{ date }}</p>
-        <p>{{ data.location }}, {{ data.country }}</p>
-      </div>
-    </div>
-    <div :class="[$style.flex_space_between]">
-      <p>{{ data.weatherCondition }}</p>
-      <img :src="'src/assets/images/weathers/' + this.weather + '.png'" />
-    </div>
-  </div>
-</template>
 <script>
 import { getStamp } from "../classes/Stamp.js";
 
@@ -36,11 +19,13 @@ export default {
   },
 
   created() {
-    let weatherCondition = this.apiResult.list[0].weather[0].description;
-    this.data.country = this.apiResult.city.country;
-    this.data.temp = this.apiResult.list[0].main.temp;
+    let weatherCondition = this.apiResult.weather[0].description;
+    this.data.country = this.apiResult.sys.country;
+    this.data.temp = this.apiResult.main.temp;
 
-    let apiDate = this.apiResult.list[0].dt_txt;
+    let objectDate = new Date().toJSON().slice(0, 10);
+    let objectTime = new Date().toJSON().slice(11, 19);
+    let apiDate = objectDate + " " + objectTime;
     this.date = new Date(apiDate).toUTCString().substr(0, 11);
     this.data.stamp = getStamp();
     this.data.weatherCondition = weatherCondition.toUpperCase();
@@ -57,3 +42,20 @@ export default {
 <style>
 @import "../assets/weathers.css";
 </style>
+<template>
+  <div :class="[$style.content, $style.flex_space_around, this.weather]">
+    <div :class="[$style.flex_space_between]">
+      <div>
+        <h2>{{ data.temp }}°</h2>
+      </div>
+      <div>
+        <p>{{ date }}</p>
+        <p>{{ data.location }}, {{ data.country }}</p>
+      </div>
+    </div>
+    <div :class="[$style.flex_space_between]">
+      <p>{{ data.weatherCondition }}</p>
+      <img :src="'images/weathers/' + this.weather + '.png'" />
+    </div>
+  </div>
+</template>
