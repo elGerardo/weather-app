@@ -106,8 +106,8 @@ export default {
         <p>https://dribbble.com/shots/3761552-Free-Weather-Icons</p>
       </div>
     </div>
-    <Banner v-if="!loading" :propApiResult="this.weatherApiResult" />
-    <Forecast v-if="!loading" :propApiResult="this.forecastApiResult" />
+    <Banner v-if="!loading" :propApiResult="this.weatherApiResult"/>
+    <Forecast v-if="!loading" :propApiResult="this.forecastApiResult" :propWeatherResult="this.weatherApiResult" />
   </main>
 </template>
 
