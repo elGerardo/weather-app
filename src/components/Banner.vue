@@ -19,6 +19,7 @@ export default {
   },
 
   created() {
+
     let weatherCondition = this.apiResult.weather[0].description;
     this.data.country = this.apiResult.sys.country;
     this.data.temp = this.apiResult.main.temp;
@@ -32,6 +33,9 @@ export default {
 
     this.weather =
       this.data.stamp + "_" + weatherCondition.replace(/\s+/g, "_");
+
+
+      console.log(this.weather)
   },
 };
 </script>
