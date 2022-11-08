@@ -71,6 +71,11 @@ main{
     background: linear-gradient(90deg, rgba(26,145,255,1) 0%, rgba(168,168,168,1) 100%);   
 }
 
+.day_moderate_rain{
+    background: rgb(26,145,255);
+    background: linear-gradient(90deg, rgba(26,145,255,1) 0%, rgba(168,168,168,1) 100%);   
+}
+
 
 /* nigth */
 
@@ -117,4 +122,9 @@ main{
 .night_light_rain{
     background: rgb(19,52,83);
     background: linear-gradient(90deg, rgba(19,52,83,1) 0%, rgba(167,167,167,1) 100%); 
+}
+
+.night_moderate_rain{
+    background: rgb(26,145,255);
+    background: linear-gradient(90deg, rgba(26,145,255,1) 0%, rgba(168,168,168,1) 100%);   
 }
