@@ -6,7 +6,7 @@ export default {
   data() {
     return {
       loading: true,
-      apiKey: "",
+      apiKey: "5ac9af6cc541c33c606d5aaa88dbc745",
       units: "metric",
       baseUrl: "http://api.openweathermap.org/data/2.5/",
       endpoints: {
