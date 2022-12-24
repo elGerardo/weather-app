@@ -41,6 +41,11 @@ main{
     background: linear-gradient(90deg, rgba(26,145,255,1) 0%, rgba(168,168,168,1) 100%); 
 }
 
+.day_fog{
+    background: rgb(26,145,255);
+    background: linear-gradient(90deg, rgba(26,145,255,1) 0%, rgba(168,168,168,1) 100%); 
+}
+
 .day_clouds{
     background: rgb(167,167,167);
     background: linear-gradient(90deg, rgba(167,167,167,1) 0%, rgba(223,237,240,1) 100%); 
@@ -90,6 +95,11 @@ main{
 }
 
 .night_few_clouds{
+    background: rgb(19,52,83);
+    background: linear-gradient(90deg, rgba(19,52,83,1) 0%, rgba(167,167,167,1) 100%); 
+}
+
+.night_fog{
     background: rgb(19,52,83);
     background: linear-gradient(90deg, rgba(19,52,83,1) 0%, rgba(167,167,167,1) 100%); 
 }
