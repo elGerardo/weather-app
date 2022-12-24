@@ -94,7 +94,7 @@ export default {
 <template>
   <main>
     <div v-if="loading" :class="[$style.content]">
-      <img src="./assets/images/loading_gif.gif" />
+      <img src="/images/loading_gif.gif" />
       <h2 v-if="thinking && !success">
         We need your location to show the weather
       </h2>
