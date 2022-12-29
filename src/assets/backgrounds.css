@@ -1,0 +1,18 @@
+.background_gray {
+    background-color: #f3f3f3;
+    color: black;
+}
+
+.background_white {
+    background-color: #FFFFFF;
+}
+
+.background_black {
+    background-color: #273250;
+    color: white;
+}
+
+.background_semi_black {
+    color: white;
+    background-color: #374169;
+}

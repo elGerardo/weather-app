@@ -23,3 +23,20 @@
     text-align: left;
     color: rgb(255, 255, 255,0.5);
 }
+
+.weather_data_content
+{
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.banner
+{
+    width: 30%;
+}
+
+.forecast
+{
+    width: 70%;
+}

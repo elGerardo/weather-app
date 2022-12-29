@@ -2,8 +2,8 @@
 import { getStamp } from "../classes/Stamp.js";
 import Footer from "./Footer.vue";
 export default {
-  components:{
-    Footer
+  components: {
+    Footer,
   },
   props: ["propApiResult", "propWeatherResult"],
 
@@ -14,11 +14,15 @@ export default {
       weatherCondition: "",
       stamp: "",
       weather: "",
-      data:{
+      data: {
         stamp: null,
         weatherCondition: null,
         temp: null,
-      }
+      },
+      styleVersion: {
+        bgBody: "background_gray",
+        bgItems: "background_white",
+      },
     };
   },
 
@@ -46,6 +50,16 @@ export default {
         return "day";
       }
     },
+    changeStyleVersion() {
+      if (this.styleVersion.bgBody == "background_gray") {
+        this.styleVersion.bgBody = "background_black";
+        this.styleVersion.bgItems = "background_semi_black";
+        return;
+      }
+      this.styleVersion.bgBody = "background_gray";
+      this.styleVersion.bgItems = "background_white";
+      return;
+    },
   },
 };
 </script>
@@ -56,33 +70,34 @@ export default {
 </style>
 <style>
 @import "../assets/weathers.css";
+@import "../assets/backgrounds.css";
 </style>
-<template :class>
-  <main :class="[this.weather]">
+<template>
+  <main :class="[styleVersion.bgBody]">
     <div :class="[$style.container]">
-      <div :class="[$style.flex_center, $style.content]">
+      <div :class="[$style.content]">
+        <div :class="[$style.btn_dark_light]">
+          <h2>Forecast</h2>
+          <button @click="changeStyleVersion()">Light/Dark</button>
+        </div>
         <table cellspacing="0" cellpadding="0">
-          <tr>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-          </tr>
           <tr v-for="item in this.apiResult.list" :key="item.dt">
-            <td>
-              <img
-                :src="
-                  '/images/weathers/' +
-                  hourToState(item.dt_txt) +
-                  '_' +
-                  item.weather[0].main +
-                  '.png'
-                "
-              />
-            </td>
-            <td>{{ item.dt_txt }}</td>
-            <td>{{ item.main.temp }}°</td>
-            <td>{{ item.weather[0].description.toUpperCase() }}</td>
+            <div :class="[styleVersion.bgItems]">
+              <td>
+                <img
+                  :src="
+                    '/images/weathers/' +
+                    hourToState(item.dt_txt) +
+                    '_' +
+                    item.weather[0].main +
+                    '.png'
+                  "
+                />
+              </td>
+              <td>{{ item.dt_txt }}</td>
+              <td>{{ item.main.temp }}°</td>
+              <td>{{ item.weather[0].description.toUpperCase() }}</td>
+            </div>
           </tr>
         </table>
       </div>
