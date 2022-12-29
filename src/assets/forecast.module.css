@@ -4,14 +4,29 @@
     overflow-y: scroll;
 }
 
-.btn_dark_light {
+.container_dark_light {
     margin: 1.5rem 0 0 0;
     display: flex;
     justify-content: space-between;
     padding: 0 5rem;
 }
 
+.btn_dark_light {
+    padding: 0 1rem;
+    margin: 0;
+    border: none;
+    border-radius: 1.5rem;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn_dark_light p {
+    padding: 0;
+    margin: 0;
+}
+
 .content table {
+    width: 100%;
     border-collapse: separate;
     border-spacing: 0 1.5rem;
     padding: 0rem 2.5rem 2.5rem 5rem;
@@ -19,8 +34,13 @@
     color: black;
 }
 
+.content table tr {
+    width: 100%;
+}
+
 .content table tr td {
     position: relative;
+    width: 25%;
 }
 
 .content table tr>div {
@@ -29,7 +49,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1.5rem 0;
+    padding: 1rem 0;
     box-shadow: -1px 3px 27px -21px rgba(0, 0, 0, 0.75);
     -webkit-box-shadow: -1px 3px 27px -21px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: -1px 3px 27px -21px rgba(0, 0, 0, 0.75);
@@ -37,51 +57,38 @@
 
 .content table tr td {
     border-radius: 1.5rem;
-    padding: 0rem 5rem 1rem 5rem;
+    padding: 0rem 5% 1rem 5%;
 }
 
 .content table img {
     width: 5rem;
+    padding: 1.5rem;
+    margin: 0;
+    border-radius: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.15);
 }
 
 @media only screen and (max-width: 780px) {
     .content table {
-        margin: 4rem 0;
+        margin: 2rem 0 5rem 0;
     }
 
     .content table tr td {
         padding: 2.5rem 2.5rem 0.5rem 2.5rem;
-        border-bottom: 0.5px solid white;
     }
 }
 
-@media only screen and (max-width: 660px) {
-    .content table {
-        margin: 3rem 0;
-    }
-
+@media only screen and (max-width: 570px) {
     .content table tr td {
-        padding: 1.5rem 1.5rem 0.5rem 1.5rem;
-        border-bottom: 0.5px solid white;
+        font-size: 1.4rem;
+        padding: 2.5rem 0.5rem 0.5rem 0.5rem;
     }
 }
 
-@media only screen and (max-width: 420px) {
-    .content table {
-        margin: 2.5rem 0;
-    }
-
+@media only screen and (max-width: 430px) {
     .content table tr td {
         font-size: 1.2rem;
+        padding: 1.5rem 0.5rem 0.5rem 0.5rem;
     }
 }
 
-@media only screen and (max-width: 360px) {
-    .content table {
-        margin: 2rem 0;
-    }
-
-    .content table tr td {
-        font-size: 1rem;
-    }
-}

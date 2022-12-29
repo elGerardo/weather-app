@@ -1,4 +1,4 @@
-.content{
+.content {
     width: 100vw;
     height: 100vh;
     background-color: #6b51e8;
@@ -11,32 +11,42 @@
     position: relative;
 }
 
-.content img{
+.content img {
     width: 20rem;
 }
 
-.content div{
+.content div {
     font-size: 1.2rem;
     position: absolute;
     bottom: 0;
     left: 0;
     text-align: left;
-    color: rgb(255, 255, 255,0.5);
+    color: rgb(255, 255, 255, 0.5);
 }
 
-.weather_data_content
-{
+.weather_data_content {
     display: flex;
     height: 100vh;
     overflow: hidden;
 }
 
-.banner
-{
+.banner {
     width: 30%;
 }
 
-.forecast
-{
+.forecast {
     width: 70%;
+}
+
+@media only screen and (max-width: 780px) {
+    .weather_data_content {
+        display: block;
+    }
+
+
+
+    .forecast,
+    .banner {
+        width: 100%;
+    }
 }

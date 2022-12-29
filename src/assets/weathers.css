@@ -25,62 +25,24 @@ main{
 }
 
 /* day */
-
-.day_clear{
-    background: rgb(26,145,255);
-    background: linear-gradient(90deg, rgba(26,145,255,1) 0%, rgba(167,213,255,1) 100%); 
-}
-
-.day_clear_sky{
-    background: rgb(26,145,255);
-    background: linear-gradient(90deg, rgba(26,145,255,1) 0%, rgba(167,213,255,1) 100%); 
-}
-
-.day_few_clouds{
-    background: rgb(26,145,255);
-    background: linear-gradient(90deg, rgba(26,145,255,1) 0%, rgba(168,168,168,1) 100%); 
-}
-
-.day_fog{
-    background: rgb(26,145,255);
-    background: linear-gradient(90deg, rgba(26,145,255,1) 0%, rgba(168,168,168,1) 100%); 
-}
-
+.day_overcast_clouds,
 .day_clouds{
     background: rgb(167,167,167);
     background: linear-gradient(90deg, rgba(167,167,167,1) 0%, rgba(223,237,240,1) 100%); 
 }
 
-.day_scattered_clouds{
-    background: rgb(26,145,255);
-    background: linear-gradient(90deg, rgba(26,145,255,1) 0%, rgba(168,168,168,1) 100%); 
-}
-
-.day_broken_clouds{
-    background: rgb(26,145,255);
-    background: linear-gradient(90deg, rgba(26,145,255,1) 0%, rgba(168,168,168,1) 100%); 
-}
-
-.day_mist{
-    background: rgb(26,145,255);
-    background: linear-gradient(90deg, rgba(26,145,255,1) 0%, rgba(168,168,168,1) 100%); 
-}
-
-.day_overcast_clouds{
-    background: rgb(167,167,167);
-    background: linear-gradient(90deg, rgba(167,167,167,1) 0%, rgba(223,237,240,1) 100%); 
-}
-
-.day_light_rain{
+.day_light_rain,
+.day_moderate_rain,
+.day_mist,
+.day_broken_clouds,
+.day_scattered_clouds,
+.day_fog,
+.day_few_clouds,
+.day_clear_sky,
+.day_clear{
     background: rgb(26,145,255);
     background: linear-gradient(90deg, rgba(26,145,255,1) 0%, rgba(168,168,168,1) 100%);   
 }
-
-.day_moderate_rain{
-    background: rgb(26,145,255);
-    background: linear-gradient(90deg, rgba(26,145,255,1) 0%, rgba(168,168,168,1) 100%);   
-}
-
 
 /* nigth */
 
@@ -94,47 +56,19 @@ main{
     background: linear-gradient(90deg, rgba(0,38,73,1) 0%, rgba(0,98,187,1) 100%); 
 }
 
-.night_few_clouds{
-    background: rgb(19,52,83);
-    background: linear-gradient(90deg, rgba(19,52,83,1) 0%, rgba(167,167,167,1) 100%); 
-}
-
-.night_fog{
-    background: rgb(19,52,83);
-    background: linear-gradient(90deg, rgba(19,52,83,1) 0%, rgba(167,167,167,1) 100%); 
-}
-
+.night_overcast_clouds,
 .night_clouds{
     background: rgb(97,97,97);
     background: linear-gradient(90deg, rgba(97,97,97,1) 0%, rgba(172,175,177,1) 100%); 
 }
 
-.night_scattered_clouds{
+.night_light_rain,
+.night_moderate_rain,
+.night_mist,
+.night_broken_clouds,
+.night_scattered_clouds,
+.night_fog,
+.night_few_clouds{
     background: rgb(19,52,83);
     background: linear-gradient(90deg, rgba(19,52,83,1) 0%, rgba(167,167,167,1) 100%); 
-}
-
-.night_broken_clouds{
-    background: rgb(19,52,83);
-    background: linear-gradient(90deg, rgba(19,52,83,1) 0%, rgba(167,167,167,1) 100%); 
-}
-
-.night_mist{
-    background: rgb(19,52,83);
-    background: linear-gradient(90deg, rgba(19,52,83,1) 0%, rgba(167,167,167,1) 100%); 
-}
-
-.night_overcast_clouds{
-    background: rgb(97,97,97);
-    background: linear-gradient(90deg, rgba(97,97,97,1) 0%, rgba(172,175,177,1) 100%); 
-}
-
-.night_light_rain{
-    background: rgb(19,52,83);
-    background: linear-gradient(90deg, rgba(19,52,83,1) 0%, rgba(167,167,167,1) 100%); 
-}
-
-.night_moderate_rain{
-    background: rgb(19,52,83);
-    background: linear-gradient(90deg, rgba(19,52,83,1) 0%, rgba(167,167,167,1) 100%);  
 }

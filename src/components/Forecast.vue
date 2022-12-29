@@ -1,10 +1,12 @@
 <script>
 import { getStamp } from "../classes/Stamp.js";
 import Footer from "./Footer.vue";
+
 export default {
   components: {
     Footer,
   },
+
   props: ["propApiResult", "propWeatherResult"],
 
   data() {
@@ -76,9 +78,19 @@ export default {
   <main :class="[styleVersion.bgBody]">
     <div :class="[$style.container]">
       <div :class="[$style.content]">
-        <div :class="[$style.btn_dark_light]">
+        <div :class="[$style.container_dark_light]">
           <h2>Forecast</h2>
-          <button @click="changeStyleVersion()">Light/Dark</button>
+          <button :class="[$style.btn_dark_light, styleVersion.bgBody === 'background_gray' ? 'background_black' : 'background_white' ]" @click="changeStyleVersion()">
+            <p v-if="styleVersion.bgBody == 'background_gray'">
+              <font-awesome-icon icon="sun" />
+              Light Mode
+            </p>
+            <p v-if="styleVersion.bgBody == 'background_black'">
+              Dark Mode
+              <font-awesome-icon icon="moon" />
+            </p>
+            
+          </button>
         </div>
         <table cellspacing="0" cellpadding="0">
           <tr v-for="item in this.apiResult.list" :key="item.dt">
@@ -100,8 +112,8 @@ export default {
             </div>
           </tr>
         </table>
+        <Footer />
       </div>
     </div>
-    <Footer />
   </main>
 </template>

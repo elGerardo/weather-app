@@ -3,16 +3,28 @@
     color: black;
 }
 
+.background_gray a{
+    color: black;
+}
+
 .background_white {
     background-color: #FFFFFF;
 }
 
 .background_black {
+    color: white;
     background-color: #273250;
+}
+
+.background_black a{
     color: white;
 }
 
 .background_semi_black {
     color: white;
     background-color: #374169;
+}
+
+.background_semi_black a{
+    color: white;
 }

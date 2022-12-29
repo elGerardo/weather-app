@@ -48,19 +48,14 @@ export default {
   <div :class="[$style.content, this.weather]">
     <div>
       <div>
-        <p>{{ data.weatherCondition }}</p>
         <img :src="'/images/weathers/' + this.weather + '.png'" />
       </div>
       <div>
-        <div>
-          <h2>{{ data.temp }}°</h2>
-        </div>
-        <div>
-          <p>{{ date }}</p>
-          <p>{{ data.location }}, {{ data.country }}</p>
-        </div>
+        <h2>{{ data.temp }}°</h2>
+        <p>{{ data.weatherCondition }}</p>
+        <p>{{ date }}</p>
+        <p>{{ data.location }}, {{ data.country }}</p>  
       </div>
-
-  </div>
+    </div>
   </div>
 </template>
