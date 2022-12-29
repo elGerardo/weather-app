@@ -69,8 +69,10 @@
 }
 
 @media only screen and (max-width: 780px) {
-    .content table {
-        margin: 2rem 0 5rem 0;
+    .content table
+    {
+        margin-left: -1rem;
+        padding-bottom: 15rem;
     }
 
     .content table tr td {
