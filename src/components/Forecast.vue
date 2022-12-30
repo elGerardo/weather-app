@@ -72,7 +72,7 @@ export default {
             <td>
               <img
                 :src="
-                  'images/weathers/' +
+                  '/images/weathers/' +
                   hourToState(item.dt_txt) +
                   '_' +
                   item.weather[0].main +
